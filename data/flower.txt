@@ -1,0 +1,20 @@
+aster
+begonia
+camellia
+carnation
+daffodil
+dahlia
+forget-me-not
+geranium
+gladiolus
+hydrangea
+lily of the valley
+nemophila
+peony
+phlox
+rhododendron
+snowdrop
+sunflower
+tulip
+wisteria
+zinnia
