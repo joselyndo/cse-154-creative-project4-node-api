@@ -1,162 +1,122 @@
 {
   "aster": {
-    "description":"",
-    "description-credit":"",
-    "image":"",
-    "image-credit":"",
+    "image":"img/aster.jpeg",
+    "image-credit":"https://search.app.goo.gl/Xe8oXHe",
     "fun-fact":"",
-    "func-fact-credit":""
+    "fun-fact-credit":""
   },
   "begonia": {
-    "description":"",
-    "description-credit":"",
-    "image":"",
-    "image-credit":"",
+    "image":"img/begonia.jpeg",
+    "image-credit":"https://search.app.goo.gl/vFxR7V7",
     "fun-fact":"",
-    "func-fact-credit":""
+    "fun-fact-credit":""
   },
   "camellia": {
-    "description":"",
-    "description-credit":"",
-    "image":"",
-    "image-credit":"",
+    "image":"img/camellia.jpeg",
+    "image-credit":"https://search.app.goo.gl/jj7TiAh",
     "fun-fact":"",
-    "func-fact-credit":""
+    "fun-fact-credit":""
   },
   "carnation": {
-    "description":"",
-    "description-credit":"",
-    "image":"",
-    "image-credit":"",
+    "image":"img/carnation.jpeg",
+    "image-credit":"https://search.app.goo.gl/A7NrPH6",
     "fun-fact":"",
-    "func-fact-credit":""
+    "fun-fact-credit":""
   },
   "daffodil": {
-    "description":"",
-    "description-credit":"",
-    "image":"",
-    "image-credit":"",
+    "image":"img/daffodil.jpeg",
+    "image-credit":"https://search.app.goo.gl/5MtdCZv",
     "fun-fact":"",
-    "func-fact-credit":""
+    "fun-fact-credit":""
   },
   "dahlia": {
-    "description":"",
-    "description-credit":"",
-    "image":"",
-    "image-credit":"",
+    "image":"img/daffodil.jpeg",
+    "image-credit":"https://search.app.goo.gl/s3LS6oA",
     "fun-fact":"",
-    "func-fact-credit":""
+    "fun-fact-credit":""
   },
   "forget-me-not": {
-    "description":"",
-    "description-credit":"",
-    "image":"",
-    "image-credit":"",
+    "image":"img/forget-me-not.jpeg",
+    "image-credit":"https://search.app.goo.gl/ReegsYY",
     "fun-fact":"",
-    "func-fact-credit":""
+    "fun-fact-credit":""
   },
   "geranium": {
-    "description":"",
-    "description-credit":"",
-    "image":"",
-    "image-credit":"",
+    "image":"img/geranium.jpeg",
+    "image-credit":"https://search.app.goo.gl/c84Jpkv",
     "fun-fact":"",
-    "func-fact-credit":""
+    "fun-fact-credit":""
   },
   "gladiolus": {
-    "description":"",
-    "description-credit":"",
-    "image":"",
-    "image-credit":"",
+    "image":"img/gladiolus.jpeg",
+    "image-credit":"https://search.app.goo.gl/royLR2A",
     "fun-fact":"",
-    "func-fact-credit":""
+    "fun-fact-credit":""
   },
   "hydrangea": {
-    "description":"",
-    "description-credit":"",
-    "image":"",
-    "image-credit":"",
+    "image":"img/hydrangea.jpeg",
+    "image-credit":"https://search.app.goo.gl/j15EqB5",
     "fun-fact":"",
-    "func-fact-credit":""
+    "fun-fact-credit":""
   },
   "lily of the valley": {
-    "description":"",
-    "description-credit":"",
-    "image":"",
-    "image-credit":"",
+    "image":"img/lily-of-the-valley.jpeg",
+    "image-credit":"https://search.app.goo.gl/t42eLhH",
     "fun-fact":"",
-    "func-fact-credit":""
+    "fun-fact-credit":""
   },
   "nemophila": {
-    "description":"",
-    "description-credit":"",
-    "image":"",
-    "image-credit":"",
+    "image":"img/nemophila.jpeg",
+    "image-credit":"https://search.app.goo.gl/oYiEs2r",
     "fun-fact":"",
-    "func-fact-credit":""
+    "fun-fact-credit":""
   },
   "peony": {
-    "description":"",
-    "description-credit":"",
-    "image":"",
-    "image-credit":"",
+    "image":"img/peony.jpeg",
+    "image-credit":"https://search.app.goo.gl/heZB6L9",
     "fun-fact":"",
-    "func-fact-credit":""
+    "fun-fact-credit":""
   },
   "phlox": {
-    "description":"",
-    "description-credit":"",
-    "image":"",
-    "image-credit":"",
+    "image":"img/phlox.jpeg",
+    "image-credit":"https://search.app.goo.gl/rUFsWwE",
     "fun-fact":"",
-    "func-fact-credit":""
+    "fun-fact-credit":""
   },
   "rhododendron": {
-    "description":"",
-    "description-credit":"",
-    "image":"",
-    "image-credit":"",
+    "image":"img/rhododendron.jpeg",
+    "image-credit":"https://search.app.goo.gl/wVSv6k7",
     "fun-fact":"",
-    "func-fact-credit":""
+    "fun-fact-credit":""
   },
   "snowdrop": {
-    "description":"",
-    "description-credit":"",
-    "image":"",
-    "image-credit":"",
+    "image":"img/snowdrop.jpeg",
+    "image-credit":"https://search.app.goo.gl/DyoPjwj",
     "fun-fact":"",
-    "func-fact-credit":""
+    "fun-fact-credit":""
   },
   "sunflower": {
-    "description":"",
-    "description-credit":"",
-    "image":"",
-    "image-credit":"",
+    "image":"img/sunflower.jpeg",
+    "image-credit":"https://search.app.goo.gl/6HjJjQo",
     "fun-fact":"",
-    "func-fact-credit":""
+    "fun-fact-credit":""
   },
   "tulip": {
-    "description":"",
-    "description-credit":"",
-    "image":"",
-    "image-credit":"",
+    "image":"img/tulip.jpeg",
+    "image-credit":"https://search.app.goo.gl/cMaV1ha",
     "fun-fact":"",
-    "func-fact-credit":""
+    "fun-fact-credit":""
   },
   "wisteria": {
-    "description":"",
-    "description-credit":"",
-    "image":"",
-    "image-credit":"",
+    "image":"img/wisteria.jpg",
+    "image-credit":"https://unsplash.com/photos/a-pathway-in-the-middle-of-a-lush-green-forest-uDd5m_bv4r4",
     "fun-fact":"",
-    "func-fact-credit":""
+    "fun-fact-credit":""
   },
   "zinnia": {
-    "description":"",
-    "description-credit":"",
-    "image":"",
-    "image-credit":"",
+    "image":"img/zinnia.jpeg",
+    "image-credit":"https://search.app.goo.gl/eMdR5GE",
     "fun-fact":"",
-    "func-fact-credit":""
+    "fun-fact-credit":""
   }
 }
