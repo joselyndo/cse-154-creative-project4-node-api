@@ -1,6 +1,0 @@
-User1|[Enter review here]
-User2|[Enter review here]
-Visitor1|[Enter review here]
-Visitor2|[Enter review here]
-Tourist1|[Enter review here]
-Tourist2|[Enter review here]
