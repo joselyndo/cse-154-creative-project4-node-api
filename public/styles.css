@@ -4,3 +4,75 @@
 
 /* Stone path: DDP, Unsplash, https://unsplash.com/photos/brown-and-red-bricks-1NyiWD3iorA */
 /* Garden background: Behzad Ghaffarian, https://unsplash.com/photos/field-of-trees-near-grass-LBjA0WPtUhQ*/
+
+html {
+  /*
+    Retrieved from Behzad Ghaffarian on Unsplash,
+    https://unsplash.com/photos/field-of-trees-near-grass-LBjA0WPtUhQ
+  */
+  background-image: url("../img/garden-background.jpg");
+  background-size: cover;
+  background-position-y: bottom;
+  background-repeat: no-repeat;
+  min-height: 100%;
+}
+
+h1 {
+  width: 100%;
+  background-color: green;
+  text-align: center;
+  padding: 7px;
+  font-size: 56pt;
+  margin: 5px;
+}
+
+h2 {
+  font-size: 36pt;
+  text-decoration: underline;
+}
+
+body > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+p {
+  font-size: 16pt;
+}
+
+button {
+  font-size: 35pt;
+  width: fit-content;
+  max-height: fit-content;
+  margin: 15px;
+  padding: 5px;
+}
+
+p, button {
+  font-family: "Raleway", serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Freeman", sans-serif;
+}
+
+#start-view {
+  background-color: blanchedalmond;
+  width: 50%;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  margin-top: 20px;
+  border: solid rgb(96, 95, 69) 15px;
+}
+
+.visible {
+  display: flex;
+}
+
+.hidden {
+  display: none;
+}

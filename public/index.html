@@ -7,74 +7,78 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="../img/flower.png">   <!-- Retrieved from tabler.io: https://tabler.io/icons -->
+  <!-- Retrieved from tabler.io: https://tabler.io/icons -->
+  <link rel="icon" href="../img/flower.png">
+  <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Freeman&family=Raleway&display=swap">
   <title>CP4 Flower Garden Walk</title>
 </head>
 <body>
-  <header>
-    <h1>Garden Walk</h1>
-    <p>
-      Click "Start" and select a randomized path of five flowers. Once you've chosen a path, you can
-      to learn about a fun fact for each flower you encounter!
-    </p>
-  </header>
-  <div id="start-view">
-    <h2>Welcome to Garden Walk!</h2>
-    <button>Start</button>
-  </div>
-  <div id="path-selection-view" class="hidden">
-    <section>
-      <h3>Select how many flowers you would like to see on the walk</h3>
-      <div>
-        <input type="radio" id="3-flowers" name="amount-of-flowers" value="3" checked>
-        <label for="3-flowers">3</label>
-      </div>
-      <div>
-        <input type="radio" id="4-flowers" name="amount-of-flowers" value="4">
-        <label for="4-flowers">4</label>
-      </div>
-      <div>
-        <input type="radio" id="5-flowers" name="amount-of-flowers" value="5">
-        <label for="5-flowers">5</label>
-      </div>
-    </section>
-    <section>
-      <section id="option-one">
-        <h3>Path 1</h3>
-        <ol></ol>
-        <button>Go on this path</button>
-      </section>
-      <section id="option-two">
-        <h3>Path 2</h3>
-        <ol></ol>
-        <button>Go on this path</button>
-      </section>
-      <section id="option-three">
-        <h3>Path 3</h3>
-        <ol></ol>
-        <button>Go on this path</button>
-      </section>
-    </section>
-  </div>
-  <div id="flower-view" class="hidden">
-    <div>
-      <p>Click the button to move onto the next flower</p>
-      <button>
-        <!-- Retrieved from tabler.io: https://tabler.io/icons -->
-        <img src="img/arrow-right.png" alt="arrow pointing right">
-      </button>
+  <h1>Garden Walk</h1>
+  <div>
+    <div id="start-view" class="visible">
+      <h2>Welcome to Garden Walk!</h2>
+      <p>
+        Click "Start" to take you to the path selection screen. There, you can select
+        the amount of flowers you want to encounter on your walk.
+        There'll be three paths with randomized flowers that you can choose to walk down.
+        On a path, you learn a fun fact for each flower you see!
+      </p>
+      <button id="start-btn">Start</button>
     </div>
-  </div>
-  <div id="end-view" class="hidden">
-    <div>
-      <h3>That's the end of the garden walk!</h3>
-      <div id="recommendation">
-        <h4>Would you recommend this experience to a friend?</h4>
-        <button>Yes</button>
-        <button>No</button>
+    <div id="path-selection-view" class="hidden">
+      <section>
+        <h3>Select how many flowers you would like to see on the walk</h3>
+        <div>
+          <input type="radio" id="3-flowers" name="amount-of-flowers" value="3" checked>
+          <label for="3-flowers">3</label>
+        </div>
+        <div>
+          <input type="radio" id="4-flowers" name="amount-of-flowers" value="4">
+          <label for="4-flowers">4</label>
+        </div>
+        <div>
+          <input type="radio" id="5-flowers" name="amount-of-flowers" value="5">
+          <label for="5-flowers">5</label>
+        </div>
+      </section>
+      <section>
+        <section id="option-one">
+          <h3>Path 1</h3>
+          <ol></ol>
+          <button>Go on this path</button>
+        </section>
+        <section id="option-two">
+          <h3>Path 2</h3>
+          <ol></ol>
+          <button>Go on this path</button>
+        </section>
+        <section id="option-three">
+          <h3>Path 3</h3>
+          <ol></ol>
+          <button>Go on this path</button>
+        </section>
+      </section>
+    </div>
+    <div id="flower-view" class="hidden">
+      <div>
+        <p>Click the button to move onto the next flower</p>
+        <button>
+          <!-- Retrieved from tabler.io: https://tabler.io/icons -->
+          <img src="../img/arrow-right.png" alt="arrow pointing right">
+        </button>
       </div>
-      <button>Return to Main Screen</button>
+    </div>
+    <div id="end-view" class="hidden">
+      <div>
+        <h3>That's the end of the garden walk!</h3>
+        <div id="recommendation">
+          <h4>Would you recommend this experience to a friend?</h4>
+          <button id="yes-btn">Yes</button>
+          <button id="no-btn">No</button>
+        </div>
+        <button>Return to Main Screen</button>
+      </div>
     </div>
   </div>
 </body>
