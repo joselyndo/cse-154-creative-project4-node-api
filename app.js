@@ -11,8 +11,9 @@ const app = express();
 
 app.use(multer().none());
 
-// API: get list of random flowers of length 5 -> input
-// API: get info for a specific flower -> click l/r buttons
+// API: get list of random flowers of length 5 -> change
+// API: get info for a specific flower -> dblclick l/r buttons
+// API: send if recommend or not -> click
 
 app.use(express.static('public'));
 const PORT = process.env.PORT || 8000;
