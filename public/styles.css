@@ -2,9 +2,6 @@
   Header comment
 */
 
-/* Stone path: DDP, Unsplash, https://unsplash.com/photos/brown-and-red-bricks-1NyiWD3iorA */
-/* Garden background: Behzad Ghaffarian, https://unsplash.com/photos/field-of-trees-near-grass-LBjA0WPtUhQ*/
-
 html {
   /*
     Retrieved from Behzad Ghaffarian on Unsplash,
@@ -44,27 +41,90 @@ p {
 }
 
 button {
-  font-size: 35pt;
   width: fit-content;
   max-height: fit-content;
   margin: 15px;
-  padding: 5px;
+  padding: 10px;
+  font-size: 16pt;
 }
 
-p, button {
+input {
+  margin: 10px;
+}
+
+img {
+  object-fit: contain;
+}
+
+span {
+  text-decoration: underline;
+}
+
+p, button, ol, label {
   font-family: "Raleway", serif;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3 {
   font-family: "Freeman", sans-serif;
 }
 
-#start-view {
-  background-color: blanchedalmond;
+#start-view button {
+  font-size: 35pt;
+}
+
+#recommendation {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+#paths {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin-top: 20px;
+}
+
+#paths section {
+  border: solid rgb(96, 95, 69) 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+#paths h3 {
+  text-align: center;
+}
+
+#flower-info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+
+#flower-info img {
   width: 50%;
+  margin-right: 30px;
+}
+
+#flower-view button > img {
+  width: 25%;
+}
+
+#next-btn-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10px;
+}
+
+#start-view, #path-selection-view, #flower-view, #end-view {
+  background-color: blanchedalmond;
+  width: 55%;
   flex-direction: column;
   align-items: center;
-  padding: 40px;
+  padding: 50px;
   margin-top: 20px;
   border: solid rgb(96, 95, 69) 15px;
 }
