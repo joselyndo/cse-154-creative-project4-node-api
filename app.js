@@ -65,7 +65,7 @@ app.post("/recommendation/add", async function(req, res) {
   } catch (error) {
     res.type("text");
     if (error.code === "ENOENT") {
-      res.status(500).send("Unable to find file with requested information");
+      res.status(500).send("Unable to find file with requested information.");
     } else {
       res.status(500).send("An error has occured on the server.");
     }
@@ -75,30 +75,26 @@ app.post("/recommendation/add", async function(req, res) {
 app.get("/recommendation/get", async function(req, res) {
   try {
     let recommendationText = await fs.readFile("data/recommendation-count.txt", "utf-8");
-    console.log(1);
     let yesNoCount = processRecText(recommendationText);
-    console.log(2);
-    let recommendPercentage = Math.floor(yesNoCount[0] / (yesNoCount[0] + yesNoCount[1]));
-    console.log(3);
+    let recommendPercentage = Math.round(100 * yesNoCount[0] / (yesNoCount[0] + yesNoCount[1]));
     res.type("text").send(recommendPercentage.toString());
-    console.log(4);
   } catch (error) {
     if (error.code === "ENOENT") {
-      res.status(500).send("Unable to find file with requested information");
+      res.status(500).send("Unable to find file with requested information.");
     } else {
-      res.status(500).send("An error has occured on the server");
+      res.status(500).send("An error has occured on the server.");
     }
   }
 });
 
 function processRecText(text) {
-  console.log(0);
   let splitByOption = text.split("\n");
-  console.log(9);
-  let splitByOptionAndAmount = splitByOption.split(":");
-  console.log(8);
+  let splitByOptionAndAmount = [];
+  for (let i = 0; i < splitByOption.length; i++) {
+    splitByOptionAndAmount.push(splitByOption[i].split(":"));
+  }
+
   let yesNoCount = [parseInt(splitByOptionAndAmount[0][1]), parseInt(splitByOptionAndAmount[1][1])];
-  console.log(7);
   return yesNoCount;
 }
 
