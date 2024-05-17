@@ -60,7 +60,7 @@ span {
   text-decoration: underline;
 }
 
-p, button, ol, label {
+p, button, ol, label, a {
   font-family: "Raleway", serif;
 }
 

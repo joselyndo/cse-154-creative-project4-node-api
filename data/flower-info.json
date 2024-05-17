@@ -1,140 +1,140 @@
 {
   "aster": {
     "name":"Aster",
-    "image":"../img/aster.jpeg",
+    "image":"img/aster.jpeg",
     "image-credit":"https://search.app.goo.gl/Xe8oXHe",
     "fun-fact":"Asters, named after the Greek word for 'star', bloom in late summer and fall, making them a favorite among florists. They have cultural significance and are used in culinary dishes, adding beauty and flavor to various aspects of life.",
     "fun-fact-credit":"https://facts.net/nature/plants/13-mind-blowing-facts-about-aster/"
   },
   "begonia": {
     "name":"Begonia",
-    "image":"../img/begonia.jpeg",
+    "image":"img/begonia.jpeg",
     "image-credit":"https://search.app.goo.gl/vFxR7V7",
     "fun-fact":"Begonias are known for their wide range of leaf colors, but you'll also find begonia flowers in all sorts of hues. The more common colors of white, yellow, and pink have broadened dramatically in recent years to include a full range of hues, including red, orange, and peach.",
     "fun-fact-credit":"https://www.bhg.com/facts-about-begonia-flowers-7508067"
   },
   "camellia": {
     "name":"Camellia",
-    "image":"../img/camellia.jpeg",
+    "image":"img/camellia.jpeg",
     "image-credit":"https://search.app.goo.gl/jj7TiAh",
     "fun-fact":"Camellia bushes can live up to 100 to 200 years, although the oldest living camellia, planted in 1347, can be found in China's Panlong Monastry.",
     "fun-fact-credit":"https://smithgilbertgardens.com/camellia-fun-facts/"
   },
   "carnation": {
     "name":"Carnation",
-    "image":"../img/carnation.jpeg",
+    "image":"img/carnation.jpeg",
     "image-credit":"https://search.app.goo.gl/A7NrPH6",
     "fun-fact":"It is believed that the name carnation derives from the term 'coronation' or 'corone', as they were commonly used in Greek ceremonial crowns. But others contest this, saying it stems from the Latin 'carnis', meaning flesh, due to their pinkish colour.",
     "fun-fact-credit":"https://figandbloom.com/blogs/news/fun-facts-about-carnations"
   },
   "daffodil": {
     "name":"Daffodil",
-    "image":"../img/daffodil.jpeg",
+    "image":"img/daffodil.jpeg",
     "image-credit":"https://search.app.goo.gl/5MtdCZv",
     "fun-fact":"Daffodils carry a range of symbolic meanings. One of the most common meanings associated with daffodils is new beginnings. This is likely because daffodils are one of the first flowers to bloom in the spring, signaling the end of winter and the start of a new season.",
     "fun-fact-credit":"https://www.southsideblooms.com/daffodil-flowers/"
   },
   "dahlia": {
     "name":"Dahlia",
-    "image":"../img/daffodil.jpeg",
+    "image":"img/dahlia.jpeg",
     "image-credit":"https://search.app.goo.gl/s3LS6oA",
     "fun-fact":"Dahlias were originally classified as a vegetable. They are named after 18th-century Swedish botanist Anders Dahl. He actually categorized dahlias as a vegetable because of their edible tubers.",
     "fun-fact-credit":"https://www.bhg.com/gardening/flowers/facts-about-dahlias/"
   },
   "forget-me-not": {
     "name":"Forget-Me-Not",
-    "image":"../img/forget-me-not.jpeg",
+    "image":"img/forget-me-not.jpeg",
     "image-credit":"https://search.app.goo.gl/ReegsYY",
     "fun-fact":"Forget-me-nots growing close together can create a large mat of plants, all sharing the same root system.",
     "fun-fact-credit":"https://kids.britannica.com/kids/article/forget-me-not/390750"
   },
   "geranium": {
     "name":"Geranium",
-    "image":"../img/geranium.jpeg",
+    "image":"img/geranium.jpeg",
     "image-credit":"https://search.app.goo.gl/c84Jpkv",
     "fun-fact":"Geranium is a native of South Africa, where more than 250 wild species of the plant still grow. The first geraniums did not come to Europe until the 17th century.",
     "fun-fact-credit":"https://www.housebeautiful.com/uk/garden/plants/g22040372/geraniums-pelargonium-facts/"
   },
   "gladiolus": {
     "name":"Gladiolus",
-    "image":"../img/gladiolus.jpeg",
+    "image":"img/gladiolus.jpeg",
     "image-credit":"https://search.app.goo.gl/royLR2A",
     "fun-fact":"Gladiolus, also known as the sword lily, is a stunning flower native to South Africa, symbolizing strength and integrity. It comes in over 250 species and can reach up to 6 feet in height, making it a versatile and vibrant addition to any garden.",
     "fun-fact-credit":"https://facts.net/nature/plants/19-fascinating-facts-about-gladiolus/"
   },
   "hydrangea": {
     "name":"Hydrangea",
-    "image":"../img/hydrangea.jpeg",
+    "image":"img/hydrangea.jpeg",
     "image-credit":"https://search.app.goo.gl/j15EqB5",
     "fun-fact":"For one type known as bigleaf hydrangea (Hydrangea macrophylla), you can change the color of their flowers by adjusting the soil pH with soil amendments. The more acidic the soil, the bluer your hydrangeas will turn out. The more alkaline, the pinker your hydrangeas will be.",
     "fun-fact-credit":"https://www.bhg.com/gardening/trees-shrubs-vines/shrubs/hydrangea-facts/"
   },
   "lily of the valley": {
     "name":"Lily of the Valley",
-    "image":"../img/lily-of-the-valley.jpeg",
+    "image":"img/lily-of-the-valley.jpeg",
     "image-credit":"https://search.app.goo.gl/t42eLhH",
     "fun-fact":"In traditional European folklore, Lily of the Valley was believed to possess magical properties that could ward off evil spirits and bring good fortune. It was often planted near homes for protection.",
     "fun-fact-credit":"https://facts.net/nature/plants/20-astonishing-facts-about-lily-of-the-valley/"
   },
   "nemophila": {
     "name":"Nemophila",
-    "image":"../img/nemophila.jpeg",
+    "image":"img/nemophila.jpeg",
     "image-credit":"https://search.app.goo.gl/oYiEs2r",
     "fun-fact":"Nemophila comes from the Greek 'nemos' meaning 'small forest' and 'phileo' meaning 'to love'. Nemphila are often found growing around the edges of woodlands, earning them their name. Nemophila are sometimes referred as 'baby blue eyes' in English.",
     "fun-fact-credit":"https://hitachikaihin.jp/en/flowers/nemophila/"
   },
   "peony": {
     "name":"Peony",
-    "image":"../img/peony.jpeg",
+    "image":"img/peony.jpeg",
     "image-credit":"https://search.app.goo.gl/heZB6L9",
     "fun-fact":"Peonies are native to Asia, Europe, and Western North America. Early in Chinese history, the peony was considered the national flower (although it's now officially the plum blossom).",
     "fun-fact-credit":"https://www.bhg.com/gardening/flowers/perennials/peony-facts/"
   },
   "phlox": {
     "name":"Phlox",
-    "image":"../img/phlox.jpeg",
+    "image":"img/phlox.jpeg",
     "image-credit":"https://search.app.goo.gl/rUFsWwE",
     "fun-fact":"The nectar-rich flowers of garden phlox act as natural magnets for pollinators, making it a valuable addition to any pollinator garden. The buzzing of bees and the fluttering of colorful butterflies are a common sight around garden phlox.",
     "fun-fact-credit":"https://facts.net/nature/plants/20-astounding-facts-about-garden-phlox/"
   },
   "rhododendron": {
     "name":"Rhododendron",
-    "image":"../img/rhododendron.jpeg",
+    "image":"img/rhododendron.jpeg",
     "image-credit":"https://search.app.goo.gl/wVSv6k7",
     "fun-fact":"Rhododendrons are part of the Ericaceae family, which includes other plants like azaleas, blueberries, and cranberries. They share similar traits such as flowering patterns, leaf structure, and preference for acidic soil.",
     "fun-fact-credit":"https://facts.net/nature/plants/19-astonishing-facts-about-rhododendron/"
   },
   "snowdrop": {
     "name":"Snowdrop",
-    "image":"../img/snowdrop.jpeg",
+    "image":"img/snowdrop.jpeg",
     "image-credit":"https://search.app.goo.gl/DyoPjwj",
     "fun-fact":"Snowdrops are one of the first flowers to appear in the new year. In the northern hemisphere, snowdrops can be seen appearing as early as January. They usually flower between the months of January and April.",
     "fun-fact-credit":"https://ngs.org.uk/fun-facts-about-snowdrops/"
   },
   "sunflower": {
     "name":"Sunflower",
-    "image":"../img/sunflower.jpeg",
+    "image":"img/sunflower.jpeg",
     "image-credit":"https://search.app.goo.gl/6HjJjQo",
     "fun-fact":"Sunflowers are originally from North America and have been cultivated for over 4,500 years. This is partly because the entirety of the sunflower plant is edible, so the leaves, stalks, and roots could all be used as food. In fact, sunflowers were grown as food in North America before other crops such as corn became commonplace.",
     "fun-fact-credit":"https://www.appleyardflowers.com/flowerdiaries/sunflower-facts/"
   },
   "tulip": {
     "name":"Tulip",
-    "image":"../img/tulip.jpeg",
+    "image":"img/tulip.jpeg",
     "image-credit":"https://search.app.goo.gl/cMaV1ha",
     "fun-fact":"Tulips originally grew wild in the temperate mountains and grasslands of Central Asia and Southern Europe. It's believed they were first cultivated in Constantinople in the 11th century. They eventually became the symbol of the Ottomans, with tulip motifs a popular element in literature, art, music, and more.",
     "fun-fact-credit":"https://www.appleyardflowers.com/flowerdiaries/tulip-facts/"
   },
   "wisteria": {
     "name":"Wisteria",
-    "image":"../img/wisteria.jpg",
+    "image":"img/wisteria.jpg",
     "image-credit":"https://unsplash.com/photos/a-pathway-in-the-middle-of-a-lush-green-forest-uDd5m_bv4r4",
     "fun-fact":"Wisteria is a stunning flowering vine that is best known for its cascading clusters of fragrant and vibrant blooms. This woody vine belongs to the pea family and is native to Asia, particularly Japan, China, and Korea.",
     "fun-fact-credit":"https://facts.net/nature/plants/12-unbelievable-facts-about-wisteria/"
   },
   "zinnia": {
     "name":"Zinnia",
-    "image":"../img/zinnia.jpeg",
+    "image":"img/zinnia.jpeg",
     "image-credit":"https://search.app.goo.gl/eMdR5GE",
     "fun-fact":"One of the great things about zinnias is their extensive blooming season. They typically flower from early summer until the first frost, providing continuous beauty to your garden.",
     "fun-fact-credit":"https://facts.net/nature/plants/14-intriguing-facts-about-zinnia/"
