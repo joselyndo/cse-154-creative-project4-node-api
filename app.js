@@ -53,12 +53,14 @@ app.get("/flower/:flowerName", async function(req, res) {
 app.post("/recommendation/add", async function(req, res) {
   try {
     let recommendation = req.body.recommendation;
+    res.type("text");
 
     if (recommendation) {
       let recommendationText = await fs.readFile("data/recommendation-count.txt", "utf-8");
       let yesNoCount = processRecText(recommendationText);
-      let newFileText = handleRecommendationVote(recommendation, yesNoCount);
+      let newFileText = handleRecommendationVote(yesNoCount, recommendation);
       await fs.writeFile("data/recommendation-count.txt", newFileText);
+      res.send("Thank you for your feedback.");
     } else {
       res.status(400).send("No input received for recommendation.");
     }
