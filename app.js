@@ -20,7 +20,7 @@ app.get("/random-flowers/:amount", async function(req, res) {
   res.type("text");
   try {
     let amountOfFlowers = parseInt(req.params.amount);
-    let flowersList = await fs.readFile("flower.txt", "utf-8");
+    let flowersList = await fs.readFile("data/flower.txt", "utf-8");
     let flowersArr = flowersList.split("\n");
     let flowersLists = generateRandomFlowersLists(flowersArr, amountOfFlowers);
     let flowerText = turnFlowerArrsIntoStr(flowersLists);
@@ -72,12 +72,16 @@ app.post("/recommendation/add", async function(req, res) {
   }
 });
 
-app.get("/recommendation/get-percentage", async function(req, res) {
+app.get("/recommendation/get", async function(req, res) {
   try {
     let recommendationText = await fs.readFile("data/recommendation-count.txt", "utf-8");
+    console.log(1);
     let yesNoCount = processRecText(recommendationText);
+    console.log(2);
     let recommendPercentage = Math.floor(yesNoCount[0] / (yesNoCount[0] + yesNoCount[1]));
+    console.log(3);
     res.type("text").send(recommendPercentage.toString());
+    console.log(4);
   } catch (error) {
     if (error.code === "ENOENT") {
       res.status(500).send("Unable to find file with requested information");
@@ -88,9 +92,13 @@ app.get("/recommendation/get-percentage", async function(req, res) {
 });
 
 function processRecText(text) {
+  console.log(0);
   let splitByOption = text.split("\n");
+  console.log(9);
   let splitByOptionAndAmount = splitByOption.split(":");
+  console.log(8);
   let yesNoCount = [parseInt(splitByOptionAndAmount[0][1]), parseInt(splitByOptionAndAmount[1][1])];
+  console.log(7);
   return yesNoCount;
 }
 
@@ -101,8 +109,7 @@ function handleRecommendationVote(yesNoCount, rec) {
     yesNoCount[1]++;
   }
 
-  updatedRecText = YES_VOTE + ":" + yesNoCount[0] + "\n" + NO_VOTE + ":" + yesNoCount[1];
-  return updatedRecText;
+  return YES_VOTE + ":" + yesNoCount[0] + "\n" + NO_VOTE + ":" + yesNoCount[1];
 }
 
 function generateRandomFlowersLists(flowersArr, amountOfFlowers) {
@@ -111,25 +118,13 @@ function generateRandomFlowersLists(flowersArr, amountOfFlowers) {
 
   for (let pathNum = 0; pathNum < flowersOnPathsArr.length; pathNum++) {
     while (flowersOnPathsArr[pathNum].length < amountOfFlowers) {
-      let selectedFlowerIndex = Math.floor(Math.random * possibleFlowersAmount);
+      let selectedFlowerIndex = Math.floor(Math.random() * possibleFlowersAmount);
       let flowerName = flowersArr[selectedFlowerIndex];
-      if (!containsFlower(flowersOnPathsArr, flowerName)) {
-        flowersOnPathsArr[pathNum].push(flowerName);
-      }
+      flowersOnPathsArr[pathNum].push(flowerName);
     }
   }
 
   return flowersOnPathsArr;
-}
-
-function containsFlower(flowersOnPathsArr, flowerName) {
-  for (let pathNum = 0; pathNum < flowersOnPathsArr.length; pathNum++) {
-    if (flowersOnPathsArr[pathNum].includes(flowerName)) {
-      return true;
-    }
-  }
-
-  return false;
 }
 
 function turnFlowerArrsIntoStr(flowersLists) {
