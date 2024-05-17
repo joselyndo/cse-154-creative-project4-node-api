@@ -7,7 +7,7 @@ html {
     Retrieved from Behzad Ghaffarian on Unsplash,
     https://unsplash.com/photos/field-of-trees-near-grass-LBjA0WPtUhQ
   */
-  background-image: url("../img/garden-background.jpg");
+  background-image: url("img/garden-background.jpg");
   background-size: cover;
   background-position-y: bottom;
   background-repeat: no-repeat;
@@ -127,6 +127,12 @@ h1, h2, h3 {
   padding: 50px;
   margin-top: 20px;
   border: solid rgb(96, 95, 69) 15px;
+}
+
+.path-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .visible {

@@ -20,6 +20,9 @@ app.get("/random-flowers/:amount", async function(req, res) {
   res.type("text");
   try {
     let amountOfFlowers = parseInt(req.params.amount);
+    if (amountOfFlowers < 1) {
+      res.status(400).send("Invalid quantity");
+    }
     let flowersList = await fs.readFile("data/flower.txt", "utf-8");
     let flowersArr = flowersList.split("\n");
     let flowersLists = generateRandomFlowersLists(flowersArr, amountOfFlowers);
@@ -60,16 +63,16 @@ app.post("/recommendation/add", async function(req, res) {
       let yesNoCount = processRecText(recommendationText);
       let newFileText = handleRecommendationVote(yesNoCount, recommendation);
       await fs.writeFile("data/recommendation-count.txt", newFileText);
-      res.send("Thank you for your feedback.");
+      res.send("Thank you for your feedback");
     } else {
-      res.status(400).send("No input received for recommendation.");
+      res.status(400).send("No input received for recommendation");
     }
   } catch (error) {
     res.type("text");
     if (error.code === "ENOENT") {
-      res.status(500).send("Unable to find file with requested information.");
+      res.status(500).send("Unable to find file with requested information");
     } else {
-      res.status(500).send("An error has occured on the server.");
+      res.status(500).send("An error has occured on the server");
     }
   }
 });
@@ -82,9 +85,9 @@ app.get("/recommendation/get", async function(req, res) {
     res.type("text").send(recommendPercentage.toString());
   } catch (error) {
     if (error.code === "ENOENT") {
-      res.status(500).send("Unable to find file with requested information.");
+      res.status(500).send("Unable to find file with requested information");
     } else {
-      res.status(500).send("An error has occured on the server.");
+      res.status(500).send("An error has occured on the server");
     }
   }
 });

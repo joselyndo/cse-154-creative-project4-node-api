@@ -9,6 +9,7 @@
   const PATH_VIEW = "path-selection-view";
   const FLOWER_VIEW = "flower-view";
   const END_VIEW = "end-view";
+  const GET_FLOWERS_LISTS = "/random-flowers/";
 
   window.addEventListener("load", init);
 
@@ -37,18 +38,57 @@
     for (let button = 0; button < pathOptionBtns.length; button++) {
       pathOptionBtns[button].addEventListener("click", function() {
         nextView(PATH_VIEW, FLOWER_VIEW);
-        console.log("u");
-        initializeFlowersView();
+        initializeFlowersView(); // todo
       });
     }
   }
 
   // update path flowers according to num flowers chosen
-  function updatePathView() {
+  async function updatePathView() {
+    try {
+      let numChosen = parseInt(this.value);
+      let res = await fetch(GET_FLOWERS_LISTS + numChosen);
+      await statusCheck(res);
+      res = await res.text();
+      let listOfFlowerLists = processFlowerLists(res);
+      addFlowerLists(listOfFlowerLists);
+    } catch (error) {
+
+    }
+  }
+
+  function processFlowerLists(res) {
+    let flowerListArr = res.split("\n");
+    let flowerArrsArr = [];
+    for (let pathNum = 0; pathNum < flowerListArr.length; pathNum++) {
+      let pathFlowersList = flowerListArr[pathNum].split(":");
+      flowerArrsArr.push(pathFlowersList);
+    }
+
+    return flowerArrsArr;
+  }
+
+  function addFlowerLists(listOfFlowerLists) {
+    let options = document.querySelectorAll(".path-option");
+    for (let optionNum = 0; optionNum < options.length; optionNum++) {
+      let contentList = options[optionNum].firstElementChild.nextElementSibling;
+      contentList.innerHTML = "";
+      for (let flowerNum = 0; flowerNum < listOfFlowerLists[optionNum].length; flowerNum++) {
+        let listItem = document.createElement("li");
+        listItem.textContent = listOfFlowerLists[optionNum][flowerNum];
+        contentList.appendChild(listItem);
+      }
+    }
   }
 
   // adds the first flower to screen
   function initializeFlowersView() {
+
+  }
+
+  // adds the second and future flowers to screen
+  // enables a screen change
+  function updateFlowersView() {
 
   }
 
@@ -64,6 +104,22 @@
   function addRecommendation() {
 
   }
+
+  /**
+   * Checks to see if the three selected cards make up a valid set. This is done by comparing each
+   * of the type of attribute against the other two cards. If each four attributes for each card are
+   * either all the same or all different, then the cards make a set. If not, they do not make a set
+   * @param {Promise<Response>} res - the response to evaluate the status code of
+   * @return {Promise<Response>} a valid response
+   */
+  async function statusCheck(res) {
+    if (!res.ok) {
+      throw new Error(await res.text());
+    }
+    return res;
+  }
+
+  // MUST ALSO FILL OUT API DOC
 
 })();
 
