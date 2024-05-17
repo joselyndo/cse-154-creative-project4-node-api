@@ -11,6 +11,7 @@
   <link rel="icon" href="../img/flower.png">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Freeman&family=Raleway&display=swap">
+  <script src="index.js"></script>
   <title>CP4 Flower Garden Walk</title>
 </head>
 <body>
@@ -29,8 +30,9 @@
     <div id="path-selection-view" class="hidden">
       <section>
         <h3>Select how many flowers you would like to see on the walk</h3>
+        <p>Note: changing the number of flowers also changes the flowers on a path</p>
         <div>
-          <input type="radio" id="flowers-3" name="amount-of-flowers" value="3" checked>
+          <input type="radio" id="flowers-3" name="amount-of-flowers" value="3">
           <label for="flowers-3">3</label>
         </div>
         <div>
@@ -45,17 +47,23 @@
       <section id="paths">
         <section id="option-one">
           <h3>Path 1</h3>
-          <ol></ol>
+          <ol>
+            <li>No flowers on this path currently.</li>
+          </ol>
           <button>Go on this path</button>
         </section>
         <section id="option-two">
           <h3>Path 2</h3>
-          <ol></ol>
+          <ol>
+            <li>No flowers on this path currently.</li>
+          </ol>
           <button>Go on this path</button>
         </section>
         <section id="option-three">
           <h3>Path 3</h3>
-          <ol></ol>
+          <ol>
+            <li>No flowers on this path currently.</li>
+          </ol>
           <button>Go on this path</button>
         </section>
       </section>
