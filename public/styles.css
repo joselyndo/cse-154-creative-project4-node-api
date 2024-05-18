@@ -42,7 +42,7 @@ body > div {
   width: 100%;
 }
 
-p {
+p, a{
   font-size: 16pt;
 }
 
@@ -111,7 +111,7 @@ h1, h2, h3 {
   text-align: center;
 }
 
-#flower-info {
+#flower-view div {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -121,6 +121,10 @@ h1, h2, h3 {
 #flower-info img {
   width: 50%;
   margin-right: 30px;
+}
+
+#flower-view button {
+  width: 25%;
 }
 
 #flower-view button > img {

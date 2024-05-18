@@ -21,6 +21,7 @@
   const RECOMMENDATION_ENDPOINT = "/recommendation/";
   const ADD_REC = "add";
   const GET_REC = "get";
+  const NO_FLOWERS = "No flowers on this path currently.";
   const ERROR_MESSAGE = "An issue has occurred. Please try again.";
   let optionOneFlowers = null;
   let optionTwoFlowers = null;
@@ -278,7 +279,7 @@
     }
 
     document.getElementById("status-message").classList.add("hidden");
-
+    resetPathFlowers();
     setOptionButtons(true);
     setRecommendationButtons(false);
     nextView(END_VIEW, START_VIEW);
@@ -307,6 +308,18 @@
     let recBtns = document.querySelectorAll("#end-view div button");
     for (let button = 0; button < recBtns.length; button++) {
       recBtns[button].disabled = doNotEnable;
+    }
+  }
+
+  /** Resets the flowers listed on each path option */
+  function resetPathFlowers() {
+    let pathOptions = document.querySelectorAll(".path-option");
+    for (let option = 0; option < pathOptions.length; option++) {
+      let list = pathOptions[option].firstElementChild.nextElementSibling;
+      list.innerHTML = "";
+      let listEntry = document.createElement("li");
+      listEntry.textContent = NO_FLOWERS;
+      list.appendChild(listEntry);
     }
   }
 
