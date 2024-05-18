@@ -57,7 +57,8 @@ app.get("/flower/:flowerName", async function(req, res) {
     flowersInfo = JSON.parse(flowersInfo);
     let specificFlowerInfo = flowersInfo[req.params.flowerName];
     if (specificFlowerInfo === undefined) {
-      res.type("text").status(400).send("Flower not supported");
+      res.type("text");
+      res.status(400).send("Flower not supported");
     } else {
       res.json(specificFlowerInfo);
     }
