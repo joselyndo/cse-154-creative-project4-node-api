@@ -57,7 +57,7 @@ dahlia:nemophila:carnation:wisteria
   - If an issue occurred on the server, returns error with message: "An error has occurred on the server".
 
 
-## *Fill in Endpoint 3 Title*
+## Record new recommendation vote
 **Request Format:** /recommendation/add with POST parameter of the form "recommendation"
 
 **Request Type:** POST
@@ -88,7 +88,7 @@ Thank you for your feedback
   - If an issue occurred on the server, returns an error with the message: "An error has occurred on the server"
 
 
-## *Fill in Endpoint 4 Title*
+## Get user recommendation rate
 **Request Format:** /recommendation/get
 
 **Request Type:** GET
