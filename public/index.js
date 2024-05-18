@@ -32,12 +32,12 @@
     initializeEndView();
   }
 
-  function nextView(currView, nextView) {
+  function nextView(currView, upcomingView) {
     document.getElementById(currView).classList.toggle("hidden");
     document.getElementById(currView).classList.toggle("visible");
 
-    document.getElementById(nextView).classList.toggle("hidden");
-    document.getElementById(nextView).classList.toggle("visible");
+    document.getElementById(upcomingView).classList.toggle("hidden");
+    document.getElementById(upcomingView).classList.toggle("visible");
   }
 
   function initializePathView() {
@@ -87,9 +87,9 @@
     for (let optionNum = 0; optionNum < options.length; optionNum++) {
       let contentList = options[optionNum].firstElementChild.nextElementSibling;
       contentList.innerHTML = "";
-      for (let flowerNum = 0; flowerNum < listOfFlowerLists[optionNum].length; flowerNum++) {
+      for (let flower = 0; flower < listOfFlowerLists[optionNum].length; flower++) {
         let listItem = document.createElement("li");
-        listItem.textContent = listOfFlowerLists[optionNum][flowerNum];
+        listItem.textContent = listOfFlowerLists[optionNum][flower];
         contentList.appendChild(listItem);
       }
     }
