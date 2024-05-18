@@ -22,6 +22,10 @@ app.use(multer().none());
 const YES_VOTE = "yes";
 const NO_VOTE = "no";
 
+/**
+ * Generates three lists of randomized flowers,
+ * where the amount of flowers depends on the given quantity
+ */
 app.get("/random-flowers/:amount", async function(req, res) {
   res.type("text");
   try {
@@ -38,27 +42,36 @@ app.get("/random-flowers/:amount", async function(req, res) {
     if (error.code === "ENOENT") {
       res.status(500).send("Unable to generate random lists of flowers");
     } else {
-      res.status(500).send("An error has occured on the server");
+      res.status(500).send("An error has occurred on the server");
     }
   }
 });
 
+/**
+ * Get the information for the specified flower. The information includes an image,
+ * the image's credit, a fact, and the fact's credit.
+ */
 app.get("/flower/:flowerName", async function(req, res) {
   try {
     let flowersInfo = await fs.readFile("data/flower-info.json", "utf-8");
     flowersInfo = JSON.parse(flowersInfo);
     let specificFlowerInfo = flowersInfo[req.params.flowerName];
-    res.json(specificFlowerInfo);
+    if (specificFlowerInfo === undefined) {
+      res.type("text").status(400).send("Flower not supported");
+    } else {
+      res.json(specificFlowerInfo);
+    }
   } catch (error) {
     res.type("text");
     if (error.code === "ENOENT") {
-      res.status(500).send("Unable to find file with information for:" + req.params.flowerName);
+      res.status(500).send("Unable to access the flower information file");
     } else {
-      res.status(500).send("An error has occured on the server");
+      res.status(500).send("An error has occurred on the server");
     }
   }
 });
 
+/** Records the recommendation of the user */
 app.post("/recommendation/add", async function(req, res) {
   try {
     let recommendation = req.body.recommendation;
@@ -76,13 +89,14 @@ app.post("/recommendation/add", async function(req, res) {
   } catch (error) {
     res.type("text");
     if (error.code === "ENOENT") {
-      res.status(500).send("Unable to find file with requested information");
+      res.status(500).send("Unable to access file with requested information");
     } else {
-      res.status(500).send("An error has occured on the server");
+      res.status(500).send("An error has occurred on the server");
     }
   }
 });
 
+/** Sends the percentage of past visitors who would recommend the Garden Walk */
 app.get("/recommendation/get", async function(req, res) {
   try {
     let recommendationText = await fs.readFile("data/recommendation-count.txt", "utf-8");
@@ -91,9 +105,9 @@ app.get("/recommendation/get", async function(req, res) {
     res.type("text").send(recommendPercentage.toString());
   } catch (error) {
     if (error.code === "ENOENT") {
-      res.status(500).send("Unable to find file with requested information");
+      res.status(500).send("Unable to access file with requested information");
     } else {
-      res.status(500).send("An error has occured on the server");
+      res.status(500).send("An error has occurred on the server");
     }
   }
 });
@@ -119,7 +133,7 @@ function processRecText(text) {
  * Updates the number of recommendations for Garden Walk
  * @param {Number[]} yesNoCount - Array of the counts recommending or not recommending the Garden
  *                                Walk
- * @param {object} String - String representing whether the user would or wouldn't recommend the
+ * @param {String} rec - String representing whether the user would or wouldn't recommend the
  *                          Garden Walk
  * @return {String} - String recording the number of recommendations
  */
