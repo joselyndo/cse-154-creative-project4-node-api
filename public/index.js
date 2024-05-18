@@ -1,5 +1,12 @@
 /**
+ * Joselyn Do
+ * May 17th, 2024
+ * Section AB: Elias & Quinton
  *
+ * This index.js file adds the functionality to the CP4 Flower Garden Walk, enabling
+ * users to select how many flowers they want to see on their "walk",
+ * which path to see, see information about the flowers they encounter,
+ * sending recommendation feedback, and starting the Garden Walk over again.
  */
 
 "use strict";
@@ -247,7 +254,7 @@
   /**
    * Update the percentage representing how many visitors would
    * recommend the Garden Walk experience
-   * */
+   */
   async function updateRecommendation() {
     let recRate = document.getElementById("recommendation-rate");
     try {

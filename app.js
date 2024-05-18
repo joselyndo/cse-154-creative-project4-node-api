@@ -1,5 +1,11 @@
 /**
- * Header comment
+ * Joselyn Do
+ * May 17th, 2024
+ * Section AB: Elias & Quinton
+ *
+ * This app.js file handles the queries for the CP4 Flower Garden Walk's API information.
+ * This file handles information about lists of flowers, flower information, and
+ * the recommendation percentage (how many users would recommend the Garden Walk).
  */
 
 "use strict";
