@@ -99,9 +99,10 @@ app.get("/recommendation/get", async function(req, res) {
 });
 
 /**
- * Helper function to return the response's result text if successful, otherwise
- * returns the rejected Promise result with an error status and corresponding text
- * @param {object} res - response to check for success/error //TODO
+ * Returns an array containing the number of people who would or wouldn't recommend the Garden Walk
+ * @param {String} text - String to process
+ * @return {Number[]} - A number array containing the amount of people who would recommend the
+ *                      Garden Walk and then the amount of people who would not recommend it
  */
 function processRecText(text) {
   let splitByOption = text.split("\n");
@@ -115,9 +116,12 @@ function processRecText(text) {
 }
 
 /**
- * Helper function to return the response's result text if successful, otherwise
- * returns the rejected Promise result with an error status and corresponding text
- * @param {object} res - response to check for success/error //TODO
+ * Updates the number of recommendations for Garden Walk
+ * @param {Number[]} yesNoCount - Array of the counts recommending or not recommending the Garden
+ *                                Walk
+ * @param {object} String - String representing whether the user would or wouldn't recommend the
+ *                          Garden Walk
+ * @return {String} - String recording the number of recommendations
  */
 function handleRecommendationVote(yesNoCount, rec) {
   if (rec === YES_VOTE) {
@@ -130,9 +134,10 @@ function handleRecommendationVote(yesNoCount, rec) {
 }
 
 /**
- * Helper function to return the response's result text if successful, otherwise
- * returns the rejected Promise result with an error status and corresponding text
- * @param {object} res - response to check for success/error //TODO
+ * Generates a list of three lists containing the flowers that can be shown on one of three paths
+ * @param {String[]} flowersArr - List of all flowers that can be shown
+ * @param {Number} amountOfFlowers - The amount of flowers to show on a path
+ * @return {(String[])[]} - 2D array containing the list of flowers for each path
  */
 function generateRandomFlowersLists(flowersArr, amountOfFlowers) {
   let flowersOnPathsArr = [[], [], []];
@@ -150,9 +155,9 @@ function generateRandomFlowersLists(flowersArr, amountOfFlowers) {
 }
 
 /**
- * Helper function to return the response's result text if successful, otherwise
- * returns the rejected Promise result with an error status and corresponding text
- * @param {object} res - response to check for success/error //TODO
+ * Records the flowers for each of the three paths in the returned string
+ * @param {(String[])[]} flowersLists - 2D array containing the flowers for each path
+ * @return {String} - String containing the information from the passed in flowersLists
  */
 function turnFlowerArrsIntoStr(flowersLists) {
   let str = "";

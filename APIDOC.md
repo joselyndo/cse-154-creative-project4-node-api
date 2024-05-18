@@ -67,3 +67,25 @@
 
 **Error Handling:**
 *Fill in an example of the error handling*
+
+
+## *Fill in Endpoint 4 Title*
+**Request Format:** *Fill in example request format, i.e. the path*
+
+**Request Type:** *Fill in request type*
+
+**Returned Data Format**: Plain Text
+
+**Description:** *Fill in description*
+
+**Example Request:** *Fill in example request*
+
+**Example Response:**
+*Fill in example response in the {}*
+
+```
+
+```
+
+**Error Handling:**
+*Fill in an example of the error handling*
