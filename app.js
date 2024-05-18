@@ -78,7 +78,7 @@ app.post("/recommendation/add", async function(req, res) {
     let recommendation = req.body.recommendation;
     res.type("text");
 
-    if (recommendation === YES_VOTE || recommendation === NO_VOTE) {
+    if ((recommendation === YES_VOTE) || (recommendation === NO_VOTE)) {
       let recommendationText = await fs.readFile("data/recommendation-count.txt", "utf-8");
       let yesNoCount = processRecText(recommendationText);
       let newFileText = handleRecommendationVote(yesNoCount, recommendation);
@@ -194,6 +194,6 @@ function turnFlowerArrsIntoStr(flowersLists) {
   return str;
 }
 
-app.use(express.static('public'));
+app.use(express.static("public"));
 const PORT = process.env.PORT || 8000;
 app.listen(PORT);
