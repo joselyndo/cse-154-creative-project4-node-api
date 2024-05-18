@@ -92,6 +92,11 @@ app.get("/recommendation/get", async function(req, res) {
   }
 });
 
+/**
+ * Helper function to return the response's result text if successful, otherwise
+ * returns the rejected Promise result with an error status and corresponding text
+ * @param {object} res - response to check for success/error //TODO
+ */
 function processRecText(text) {
   let splitByOption = text.split("\n");
   let splitByOptionAndAmount = [];
@@ -103,6 +108,11 @@ function processRecText(text) {
   return yesNoCount;
 }
 
+/**
+ * Helper function to return the response's result text if successful, otherwise
+ * returns the rejected Promise result with an error status and corresponding text
+ * @param {object} res - response to check for success/error //TODO
+ */
 function handleRecommendationVote(yesNoCount, rec) {
   if (rec === YES_VOTE) {
     yesNoCount[0]++;
@@ -113,6 +123,11 @@ function handleRecommendationVote(yesNoCount, rec) {
   return YES_VOTE + ":" + yesNoCount[0] + "\n" + NO_VOTE + ":" + yesNoCount[1];
 }
 
+/**
+ * Helper function to return the response's result text if successful, otherwise
+ * returns the rejected Promise result with an error status and corresponding text
+ * @param {object} res - response to check for success/error //TODO
+ */
 function generateRandomFlowersLists(flowersArr, amountOfFlowers) {
   let flowersOnPathsArr = [[], [], []];
   let possibleFlowersAmount = flowersArr.length;
@@ -128,6 +143,11 @@ function generateRandomFlowersLists(flowersArr, amountOfFlowers) {
   return flowersOnPathsArr;
 }
 
+/**
+ * Helper function to return the response's result text if successful, otherwise
+ * returns the rejected Promise result with an error status and corresponding text
+ * @param {object} res - response to check for success/error //TODO
+ */
 function turnFlowerArrsIntoStr(flowersLists) {
   let str = "";
   for (let pathNum = 0; pathNum < flowersLists.length - 1; pathNum++) {

@@ -22,6 +22,7 @@
 
   window.addEventListener("load", init);
 
+  /** Intializes the interactble features of the page */
   function init() {
     document.getElementById("start-btn").addEventListener("click", function() {
       nextView(START_VIEW, PATH_VIEW);
@@ -32,6 +33,11 @@
     initializeEndView();
   }
 
+  /**
+   * Switches views from the current view to the next view
+   * @param {String} currView - String representing which of the four views the user is currently on
+   * @param {String} upcomingView - String representing the next view the user will move onto
+   */
   function nextView(currView, upcomingView) {
     document.getElementById(currView).classList.toggle("hidden");
     document.getElementById(currView).classList.toggle("visible");
@@ -40,11 +46,12 @@
     document.getElementById(upcomingView).classList.toggle("visible");
   }
 
+  /** Initializes the interactable features of the path selection screen */
   function initializePathView() {
     let inputArr = document.querySelectorAll("input");
     for (let input = 0; input < inputArr.length; input++) {
       inputArr[input].addEventListener("change", updatePathOptions);
-    } // do make buttons not selected and disable buttons at end
+    }
 
     let pathOptionBtns = document.querySelectorAll("#paths button");
     for (let button = 0; button < pathOptionBtns.length; button++) {
@@ -52,7 +59,7 @@
     }
   }
 
-  // update path flowers according to num flowers chosen
+  /** Updates the flowers shown for each path option */
   async function updatePathOptions() {
     try {
       let numChosen = parseInt(this.value);
@@ -67,6 +74,12 @@
     }
   }
 
+  /**
+   * Processes the given text response about the flowers in each path
+   * @param {object} res - response containing the flower list text to process
+   * @return {(String[])[]} - An array of String arrays representing the flowers
+   *                          for each of the paths
+   */
   function processFlowerLists(res) {
     let flowerListArr = res.split("\n");
     let flowerArrsArr = [];
@@ -78,6 +91,10 @@
     return flowerArrsArr;
   }
 
+  /**
+   * Updates the path selection screen with the flowers for each path
+   * @param {(String[])[]} listOfFlowerLists - A 2D array containing the flowers for each path
+   */
   function addFlowerLists(listOfFlowerLists) {
     let options = document.querySelectorAll(".path-option");
     optionOneFlowers = listOfFlowerLists[0];
@@ -95,7 +112,7 @@
     }
   }
 
-  // adds the first flower to screen
+  /** Intializes the view for the very first flower seen */
   function initializeFlowersView() {
     let chosenOption = this.parentElement.id;
     if (chosenOption === "option-one") {
@@ -114,6 +131,7 @@
     nextView(PATH_VIEW, FLOWER_VIEW);
   }
 
+  /** Requests and handles information for a specific flower */
   async function addFlowerInfo() {
     let flowerToDisplay = chosenPathFlowers[flowerNum];
     try {
@@ -126,6 +144,10 @@
     }
   }
 
+  /**
+   * Displays the information from the given JSON object on the screen
+   * @param {JSON} flowerInfo - JSON object containing information for a specific flower
+   */
   function handleFlowerInfo(flowerInfo) {
     let img = document.createElement("img");
     img.src = flowerInfo["image"];
@@ -139,6 +161,11 @@
     parent.appendChild(infoContainer);
   }
 
+  /**
+   * Creates an element to hold information for the displayed flower
+   * @param {JSON} flowerInfo - JSON object containing information for a specific flower
+   * @return {HTMLElement} - HTML element containing information for the displayed flower
+   */
   function createFlowerInfoSection(flowerInfo) {
     let header = document.createElement("h3");
     header.textContent = flowerInfo["name"];
@@ -170,8 +197,7 @@
     return infoContainer;
   }
 
-  // adds the second and future flowers to screen
-  // enables a screen change
+  /** Updates the flower screen depending on which flower the user is viewing */
   function updateFlowersView() {
     flowerNum++;
     if (flowerNum < chosenPathFlowers.length) {
@@ -183,19 +209,25 @@
     }
   }
 
+  /** Initializes the interactable features of the end screen */
   function initializeEndView() {
     document.getElementById("recommend-btn").addEventListener("click", function() {
       addRecommendation("yes");
     });
+
     document.getElementById("do-not-recommend-btn").addEventListener("click", function() {
       addRecommendation("no");
     });
 
     document.getElementById("main-screen-btn").addEventListener("click", resetState);
-
     updateRecommendation();
   }
 
+  /**
+   * Records the user's recommendation feedback
+   * @param {String} feedback - String representing whether the user would recommend
+   *                            Garden Walk or not
+   */
   async function addRecommendation(feedback) {
     try {
       setRecommendationButtons(true);
@@ -206,12 +238,16 @@
         body: params
       });
       await statusCheck(res);
-      res = await res.text(); // add message
+      res = await res.text(); // add message / TODO
       updateRecommendation();
     } catch (error) {
     }
   }
 
+  /**
+   * Update the percentage representing how many visitors would
+   * recommend the Garden Walk experience
+   * */
   async function updateRecommendation() {
     let recRate = document.getElementById("recommendation-rate");
     try {
@@ -224,6 +260,7 @@
     }
   }
 
+  /** Resets the interactable features of the various views */
   function resetState() {
     let radioInputs = document.querySelectorAll("input");
     for (let input = 0; input < radioInputs.length; input++) {
@@ -235,6 +272,12 @@
     nextView(END_VIEW, START_VIEW);
   }
 
+  /**
+   * Disables or enables the path option buttons depending on the input
+   * @param {Boolean} doNotEnable - Boolean representing whether or not the buttons should
+   *                                be disabled or not. True means that the buttons will be
+   *                                disabled and false for enabling the buttons
+   */
   function setOptionButtons(doNotEnable) {
     let pathOptionBtns = document.querySelectorAll("#paths button");
     for (let button = 0; button < pathOptionBtns.length; button++) {
@@ -242,6 +285,12 @@
     }
   }
 
+  /**
+   * Disables or enables the recommendation buttons depending on the input
+   * @param {Boolean} doNotEnable - Boolean representing whether or not the buttons should
+   *                                be disabled or not. True means that the buttons will be
+   *                                disabled and false for enabling the buttons
+   */
   function setRecommendationButtons(doNotEnable) {
     let recBtns = document.querySelectorAll("#end-view div button");
     for (let button = 0; button < recBtns.length; button++) {
