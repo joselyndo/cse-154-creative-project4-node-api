@@ -98,7 +98,7 @@ h1, h2, h3 {
   margin-right: 5px;
 }
 
-#paths h3 {
+#paths h3, #status-message {
   text-align: center;
 }
 

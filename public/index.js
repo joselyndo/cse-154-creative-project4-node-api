@@ -21,6 +21,7 @@
   const RECOMMENDATION_ENDPOINT = "/recommendation/";
   const ADD_REC = "add";
   const GET_REC = "get";
+  const ERROR_MESSAGE = "An issue has occurred. Please try again.";
   let optionOneFlowers = null;
   let optionTwoFlowers = null;
   let optionThreeFlowers = null;
@@ -77,7 +78,7 @@
       addFlowerLists(listOfFlowerLists);
       setOptionButtons(false);
     } catch (error) {
-
+      addErrorMessage();
     }
   }
 
@@ -147,7 +148,7 @@
       flowerInfo = await flowerInfo.json();
       handleFlowerInfo(flowerInfo);
     } catch (error) {
-
+      addErrorMessage();
     }
   }
 
@@ -245,9 +246,11 @@
         body: params
       });
       await statusCheck(res);
-      res = await res.text(); // add message / TODO
+      res = await res.text();
+      addMessage("Update", res);
       updateRecommendation();
     } catch (error) {
+      addErrorMessage();
     }
   }
 
@@ -263,7 +266,7 @@
       res = await res.text();
       recRate.textContent = res + "%";
     } catch (error) {
-
+      addErrorMessage();
     }
   }
 
@@ -273,6 +276,8 @@
     for (let input = 0; input < radioInputs.length; input++) {
       radioInputs[input].checked = false;
     }
+
+    document.getElementById("status-message").classList.add("hidden");
 
     setOptionButtons(true);
     setRecommendationButtons(false);
@@ -303,6 +308,33 @@
     for (let button = 0; button < recBtns.length; button++) {
       recBtns[button].disabled = doNotEnable;
     }
+  }
+
+  /**
+   * Adds a message to the screen
+   * @param {String} headerMessage - The text to be added as the message header
+   * @param {String} bodyMessage - The text to be added to the message body
+   */
+  function addMessage(headerMessage, bodyMessage) {
+    let header = document.createElement("h2");
+    header.textContent = headerMessage;
+
+    let body = document.createElement("p");
+    body.textContent = bodyMessage;
+
+    let parent = document.getElementById("status-message");
+    parent.appendChild(header);
+    parent.appendChild(body);
+    parent.classList.remove("hidden");
+    setTimeout(function() {
+      parent.classList.add("hidden");
+      parent.innerHTML = "";
+    }, 20000);
+  }
+
+  /** Adds an error message to the screen */
+  function addErrorMessage() {
+    addMessage("Error", ERROR_MESSAGE);
   }
 
   /**
