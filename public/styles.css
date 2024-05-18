@@ -74,6 +74,15 @@ h1, h2, h3 {
   font-family: "Freeman", sans-serif;
 }
 
+#status-message {
+  background-color: aliceblue;
+}
+
+#status-message h2 {
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
 #start-view button {
   font-size: 35pt;
 }
