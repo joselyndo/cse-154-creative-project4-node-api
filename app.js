@@ -58,14 +58,14 @@ app.post("/recommendation/add", async function(req, res) {
     let recommendation = req.body.recommendation;
     res.type("text");
 
-    if (recommendation) {
+    if (recommendation === YES_VOTE || recommendation === NO_VOTE) {
       let recommendationText = await fs.readFile("data/recommendation-count.txt", "utf-8");
       let yesNoCount = processRecText(recommendationText);
       let newFileText = handleRecommendationVote(yesNoCount, recommendation);
       await fs.writeFile("data/recommendation-count.txt", newFileText);
       res.send("Thank you for your feedback");
     } else {
-      res.status(400).send("No input received for recommendation");
+      res.status(400).send("No valid input received for recommendation");
     }
   } catch (error) {
     res.type("text");

@@ -11,6 +11,9 @@
   const END_VIEW = "end-view";
   const GET_FLOWERS_LISTS = "/random-flowers/";
   const GET_FLOWER_INFO = "/flower/";
+  const RECOMMENDATION_ENDPOINT = "/recommendation/";
+  const ADD_REC = "add";
+  const GET_REC = "get";
   let optionOneFlowers = null;
   let optionTwoFlowers = null;
   let optionThreeFlowers = null;
@@ -23,7 +26,10 @@
     document.getElementById("start-btn").addEventListener("click", function() {
       nextView(START_VIEW, PATH_VIEW);
     });
+
     initializePathView();
+    document.getElementById("next-flower-btn").addEventListener("dblclick", updateFlowersView);
+    initializeEndView();
   }
 
   function nextView(currView, nextView) {
@@ -38,7 +44,7 @@
     let inputArr = document.querySelectorAll("input");
     for (let input = 0; input < inputArr.length; input++) {
       inputArr[input].addEventListener("change", updatePathOptions);
-    }
+    } // do make buttons not selected and disable buttons at end
 
     let pathOptionBtns = document.querySelectorAll("#paths button");
     for (let button = 0; button < pathOptionBtns.length; button++) {
@@ -55,6 +61,7 @@
       res = await res.text();
       let listOfFlowerLists = processFlowerLists(res);
       addFlowerLists(listOfFlowerLists);
+      setOptionButtons(false);
     } catch (error) {
 
     }
@@ -104,7 +111,6 @@
     optionThreeFlowers = null;
 
     addFlowerInfo();
-    // add event listener to button
     nextView(PATH_VIEW, FLOWER_VIEW);
   }
 
@@ -128,6 +134,7 @@
     let infoContainer = createFlowerInfoSection(flowerInfo);
 
     let parent = document.getElementById("flower-info");
+    parent.innerHTML = "";
     parent.appendChild(img);
     parent.appendChild(infoContainer);
   }
@@ -142,11 +149,13 @@
     let imgCredit = document.createElement("a");
     imgCredit.href = flowerInfo["image-credit"];
     imgCredit.textContent = "Image link";
+    imgCredit.target = "_blank";
     let span = document.createElement("span");
     span.textContent = " | ";
     let factCredit = document.createElement("a");
     factCredit.href = flowerInfo["fun-fact-credit"];
     factCredit.textContent = "Fun fact link";
+    factCredit.target = "_blank";
 
     let linkContainer = document.createElement("div");
     linkContainer.appendChild(imgCredit);
@@ -164,20 +173,80 @@
   // adds the second and future flowers to screen
   // enables a screen change
   function updateFlowersView() {
-
-  }
-
-  // Goes to either the next flower or to the end screen
-  function nextScreenFromFlowerView() {
-
+    flowerNum++;
+    if (flowerNum < chosenPathFlowers.length) {
+      addFlowerInfo();
+    } else {
+      flowerNum = 0;
+      chosenPathFlowers = null;
+      nextView(FLOWER_VIEW, END_VIEW);
+    }
   }
 
   function initializeEndView() {
+    document.getElementById("recommend-btn").addEventListener("click", function() {
+      addRecommendation("yes");
+    });
+    document.getElementById("do-not-recommend-btn").addEventListener("click", function() {
+      addRecommendation("no");
+    });
 
+    document.getElementById("main-screen-btn").addEventListener("click", resetState);
+
+    updateRecommendation();
   }
 
-  function addRecommendation() {
+  async function addRecommendation(feedback) {
+    try {
+      setRecommendationButtons(true);
+      let params = new FormData();
+      params.append("recommendation", feedback);
+      let res = await fetch(RECOMMENDATION_ENDPOINT + ADD_REC, {
+        method: "POST",
+        body: params
+      });
+      await statusCheck(res);
+      res = await res.text(); // add message
+      updateRecommendation();
+    } catch (error) {
+    }
+  }
 
+  async function updateRecommendation() {
+    let recRate = document.getElementById("recommendation-rate");
+    try {
+      let res = await fetch(RECOMMENDATION_ENDPOINT + GET_REC);
+      await statusCheck(res);
+      res = await res.text();
+      recRate.textContent = res + "%";
+    } catch (error) {
+
+    }
+  }
+
+  function resetState() {
+    let radioInputs = document.querySelectorAll("input");
+    for (let input = 0; input < radioInputs.length; input++) {
+      radioInputs[input].checked = false;
+    }
+
+    setOptionButtons(true);
+    setRecommendationButtons(false);
+    nextView(END_VIEW, START_VIEW);
+  }
+
+  function setOptionButtons(doNotEnable) {
+    let pathOptionBtns = document.querySelectorAll("#paths button");
+    for (let button = 0; button < pathOptionBtns.length; button++) {
+      pathOptionBtns[button].disabled = doNotEnable;
+    }
+  }
+
+  function setRecommendationButtons(doNotEnable) {
+    let recBtns = document.querySelectorAll("#end-view div button");
+    for (let button = 0; button < recBtns.length; button++) {
+      recBtns[button].disabled = doNotEnable;
+    }
   }
 
   /**
@@ -193,12 +262,4 @@
     }
     return res;
   }
-
-  // MUST ALSO FILL OUT API DOC
-
 })();
-
-// API: get info for a specific flower -> dblclick l/r buttons
-// API: send if recommend or not -> click
-
-// disable buttons ; path options, rec

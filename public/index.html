@@ -8,7 +8,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Retrieved from tabler.io: https://tabler.io/icons -->
-  <link rel="icon" href="img/flower.png">
+  <link rel="icon" href="img/flower.ico">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Freeman&family=Raleway&display=swap">
   <script src="index.js"></script>
@@ -50,30 +50,30 @@
           <ol>
             <li>No flowers on this path currently.</li>
           </ol>
-          <button>Go on this path</button>
+          <button disabled>Go on this path</button>
         </section>
         <section class="path-option" id="option-two">
           <h3>Path 2</h3>
           <ol>
             <li>No flowers on this path currently.</li>
           </ol>
-          <button>Go on this path</button>
+          <button disabled>Go on this path</button>
         </section>
         <section class="path-option" id="option-three">
           <h3>Path 3</h3>
           <ol>
             <li>No flowers on this path currently.</li>
           </ol>
-          <button>Go on this path</button>
+          <button disabled>Go on this path</button>
         </section>
       </section>
     </div>
     <div id="flower-view" class="hidden">
       <div id="flower-info">
       </div>
-      <div id="next-btn-container">
+      <div>
         <p>Double click the button to move onto the next flower</p>
-        <button>
+        <button id="next-flower-btn">
           <!-- Retrieved from tabler.io: https://tabler.io/icons -->
           <img src="img/arrow-right.png" alt="arrow pointing right">
         </button>
@@ -84,12 +84,12 @@
       <div id="recommendation">
         <h3>Would you recommend this experience to a friend?</h3>
         <div>
-          <button id="recommend">Yes</button>
+          <button id="recommend-btn">Yes</button>
           <button id="do-not-recommend-btn">No</button>
         </div>
         <p>
           Currently,
-          <span id="recommendation-percent">83%</span>
+          <span id="recommendation-rate">83%</span>
           of visitors recommend the Garden Walk!
         </p>
       </div>
